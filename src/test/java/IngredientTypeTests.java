@@ -8,12 +8,12 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class IngredientTypeTests {
-    String[] VALUES = {
+    private final String[] VALUES = {
             "SAUCE",
             "FILLING"
     };
 
-    int INGREDIENT_TYPE_LENGTH = 2;
+    private final int INGREDIENT_TYPE_LENGTH = 2;
 
     @Test
     void testIngredientTypeSize() {
