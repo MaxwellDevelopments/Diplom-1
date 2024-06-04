@@ -3,10 +3,6 @@ import com.github.javafaker.Faker;
 import java.util.Random;
 
 public class Global {
-    private Global() {
-
-    }
-
     public static String getFakeName() {
         return new Faker().name().firstName();
     }
