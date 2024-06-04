@@ -30,6 +30,12 @@ class BurgerTests {
     @Mock
     private Ingredient mockIngredient2;
 
+    @Mock
+    IngredientType ing1Type;
+
+    @Mock
+    IngredientType ing2Type;
+
     @Spy
     Burger burger;
 
@@ -122,11 +128,7 @@ class BurgerTests {
         verify(mockIngredient2, Mockito.times(1)).getPrice();
     }
 
-    @Mock
-    IngredientType ing1Type;
 
-    @Mock
-    IngredientType ing2Type;
 
     @Test
     void testGetReceipt() {
