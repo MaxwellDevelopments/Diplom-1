@@ -10,30 +10,35 @@ class BunTests {
 
 
 
-    private final String BUN_NAME = Global.getFakeName();
-    private final float PRICE = Global.getFakePrice();
+    private final String EXPECTED_BUN_NAME = Global.getFakeName();
+    private final float EXPECTED_PRICE = Global.getFakePrice();
 
     @BeforeEach
     void setUp() {
-        bun = new Bun(BUN_NAME, PRICE);
+        bun = new Bun(EXPECTED_BUN_NAME, EXPECTED_PRICE);
     }
 
     @Test
     void getNameTest() {
         String errorMessage = "Не совпадает имя переданное в конструктор и возвращенное геттером";
-        getterTest(errorMessage, bun.getPrice(), PRICE);
+        String actual = bun.getName();
+        MatcherAssert.assertThat(
+                errorMessage,
+                actual,
+                is(EXPECTED_BUN_NAME)
+        );
     }
+
 
     @Test
     void getPriceTest() {
         String errorMessage = "Не совпадает цена переданная в конструктор и возвращенная геттером";
-        getterTest(errorMessage, bun.getPrice(), PRICE);
+        float actual = bun.getPrice();
+        MatcherAssert.assertThat(
+                errorMessage,
+                actual,
+                is(EXPECTED_PRICE)
+        );
     }
 
-    private <A, E> void getterTest(String errorMesage, A actual, E expected) {
-        MatcherAssert.assertThat(
-                errorMesage,
-                actual,
-                is(expected));
-    }
 }
